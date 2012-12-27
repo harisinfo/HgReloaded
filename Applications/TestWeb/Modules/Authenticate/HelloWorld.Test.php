@@ -7,7 +7,7 @@ class TestRequestManager extends UnitTestCase
     {  
         $requestmanager = new RequestManager();  
         $response = $requestmanager->processRequest();
-        $this->assertIsA( $response, 'array' );
+        $this->assertIsA($response, 'array');
         //$this->assertIsA($response['ticket'], 'string');
 	}
 	

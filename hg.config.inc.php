@@ -1,5 +1,5 @@
 <?php
-// Define all core functions here
+// Define all core variables here
 define('__CORE_DIR', 'Core');
 define('__CLASSES_DIR', 'Classes');
 define('__BOOTSTRAP_DIR', 'Bootstrap');

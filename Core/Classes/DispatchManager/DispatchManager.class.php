@@ -12,6 +12,11 @@ class DispatchManager extends RequestManager
 	private $application;
 	private $r = array();
 	
+	public function __constructor()
+	{
+		// Todo
+	}
+	
 	public function bootstrap()
 	{
 		$this->r = RequestManager::processRequest();
@@ -30,11 +35,11 @@ class DispatchManager extends RequestManager
 	
 	protected function fetchLibrary( $application, $module )
 	{
-		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $module . "/" . $module . ".class.php" );
+		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $module . "/" . $module . ".class.php" );		
 		
 		if( intval( $i ) == 1 )
 		{
-			$object = new $module;
+			$object = new $module( $this->fetchDependencies( $application, $module ) );
 			return $object;
 		}
 		else
@@ -45,6 +50,28 @@ class DispatchManager extends RequestManager
 		return FALSE;
 	}
 	
+	
+	protected function fetchDependencies( $application, $module )
+	{
+		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/application.config.inc.php" );
+		
+		if( intval( $i ) == 1 )
+		{
+			global $loadModules;
+			
+			if( isset( $loadModules[ 'dependency' ][ $module ] ) === TRUE )
+			{
+				if( $loadModules[ 'dependency' ][ $module ] == 'mysqli' )
+				{
+					$injectObj = new $loadModules[ 'dependency' ][ $module ]( 'localhost', 'root', '', 'hi' );
+					return $injectObj;
+				}
+			}
+		}
+		
+		return NULL;
+	}
+		
 }
 
 
@@ -53,5 +80,5 @@ $obj = $dispatch->bootstrap();
 
 if( is_object( $obj ) === TRUE )
 {
-	$response = $obj->init();	
+	$response = $obj->init();
 }
