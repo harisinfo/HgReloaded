@@ -7,6 +7,7 @@ define('KEYHASH' , 'v6*pV!L5b!tSF@d~)x2T(Mi_');
 // Application Constants
 define('__APPLICATION_NAME' , 'TestWeb');
 define('__APPLICATION_SIGNATURE' , 'TW');
+define('__SITE_IDENTIFIER' , 'TW');
 
 $loadModules[ 'module' ][ 'HelloWorld' ] = 'HelloWorld';
 $loadModules[ 'name' ][ 'HelloWorld' ] = 'HelloWorld.class.php';

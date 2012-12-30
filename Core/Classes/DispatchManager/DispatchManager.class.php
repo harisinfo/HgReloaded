@@ -11,6 +11,7 @@ class DispatchManager extends RequestManager
 	private $module;
 	private $application;
 	private $r = array();
+	private $session;
 	
 	public function __constructor()
 	{
@@ -39,7 +40,7 @@ class DispatchManager extends RequestManager
 		
 		if( intval( $i ) == 1 )
 		{
-			$object = new $module( $this->fetchDependencies( $application, $module ) );
+			$object = new $module( $this->r, $this->fetchDependencies( $application, $module ) );
 			return $object;
 		}
 		else
@@ -57,14 +58,30 @@ class DispatchManager extends RequestManager
 		
 		if( intval( $i ) == 1 )
 		{
-			global $loadModules;
+			global $loadModules, $db;
 			
 			if( isset( $loadModules[ 'dependency' ][ $module ] ) === TRUE )
 			{
 				if( $loadModules[ 'dependency' ][ $module ] == 'mysqli' )
 				{
-					$injectObj = new $loadModules[ 'dependency' ][ $module ]( 'localhost', 'root', '', 'hi' );
+					$injectObj = new $loadModules[ 'dependency' ][ $module ]( 'localhost', 'root', '', 'testweb' );
+					
 					return $injectObj;
+				}
+				elseif( class_exists( $loadModules[ 'dependency' ][ $module ] ) === TRUE )
+				{
+					// load module
+				}
+				else
+				{
+					// include module here from Application
+					$j = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $loadModules[ 'dependency' ][ $module ] . 
+										"/" . $loadModules[ 'dependency' ][ $module ] . ".class.php" );
+										
+					if( intval( $j ) == 1 )
+					{
+						echo "Include the file and create object";
+					}
 				}
 			}
 		}
