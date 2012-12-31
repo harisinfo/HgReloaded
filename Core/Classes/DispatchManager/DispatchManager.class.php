@@ -36,11 +36,21 @@ class DispatchManager extends RequestManager
 	
 	protected function fetchLibrary( $application, $module )
 	{
-		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $module . "/" . $module . ".class.php" );		
+		$j = @require_once( __APPLICATIONS_ROOT . "/" . $application . "/application.config.inc.php" );
+		
+		if( intval( $j ) != 1 )
+		{
+			die( "Failed to bootstrap application configuration for {$application}" );
+		}
+		
+		global $loadModules;
+		
+		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $loadModules[ 'module' ][ $module ] . "/" . 
+							$loadModules[ 'manager' ][ $module ] . ".class.php" );		
 		
 		if( intval( $i ) == 1 )
-		{
-			$object = new $module( $this->r, $this->fetchDependencies( $application, $module ) );
+		{			
+			$object = new $loadModules[ 'manager' ][ $module ]( $this->r, $this->fetchDependencies( $application, $module ) );
 			return $object;
 		}
 		else
@@ -54,7 +64,7 @@ class DispatchManager extends RequestManager
 	
 	protected function fetchDependencies( $application, $module )
 	{
-		$i = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/application.config.inc.php" );
+		$i = @require_once( __APPLICATIONS_ROOT . "/" . $application . "/application.config.inc.php" );
 		
 		if( intval( $i ) == 1 )
 		{
@@ -64,8 +74,8 @@ class DispatchManager extends RequestManager
 			{
 				if( $loadModules[ 'dependency' ][ $module ] == 'mysqli' )
 				{
-					$injectObj = new $loadModules[ 'dependency' ][ $module ]( 'localhost', 'root', '', 'testweb' );
-					
+					// globals again
+					$injectObj = new $loadModules[ 'dependency' ][ $module ]( $db[ 'host' ], $db[ 'user' ], $db[ 'password' ], $db[ 'database' ] );
 					return $injectObj;
 				}
 				elseif( class_exists( $loadModules[ 'dependency' ][ $module ] ) === TRUE )
@@ -75,12 +85,17 @@ class DispatchManager extends RequestManager
 				else
 				{
 					// include module here from Application
-					$j = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $loadModules[ 'dependency' ][ $module ] . 
-										"/" . $loadModules[ 'dependency' ][ $module ] . ".class.php" );
+					$dependency_module = $loadModules[ 'dependency' ][ $module ];
+					
+					echo $dependency_module;
+					
+					$j = @include_once( __APPLICATIONS_ROOT . "/" . $application . "/" . __MODULE_DIR . "/" . $loadModules[ 'manager' ][ $dependency_module ] . 
+										"/" . $loadModules[ 'manager' ][ $dependency_module ] . ".class.php" );
 										
 					if( intval( $j ) == 1 )
 					{
-						echo "Include the file and create object";
+						$injectObj = new $loadModules[ 'manager' ][ $dependency_module ]( $this->r );
+						return $injectObj;
 					}
 				}
 			}
