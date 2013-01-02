@@ -36,5 +36,5 @@ $loadModules[ 'dependency' ][ 'category' ] = 'mysqli';
 $loadModules[ 'module' ][ 'page' ] = 'PageManager';
 $loadModules[ 'name' ][ 'page' ] = 'PageManager.class.php';
 $loadModules[ 'manager' ][ 'page' ] = 'PageManager';
-$loadModules[ 'dependency' ][ 'page' ] = 'mysqli'; // inject category into page manager
-
+$loadModules[ 'dependency' ][ 'page' ] = 'mysqli';
+$loadModules[ 'attach' ][ 'page' ][ 0 ] = 'category'; 
