@@ -60,6 +60,11 @@ class CategoryManager
 	
 	public function init()
 	{
+		if( isset( $this->request[ '_request' ][ 'cmd' ] ) === TRUE && $this->request[ '_request' ][ 'cmd' ] == 'listing' )
+		{
+			return $this->showListingsForCategoryorSubCategory();	
+		}
+		
 		return $this->listCategorySubCategory();
 	}
 	
@@ -106,6 +111,15 @@ class CategoryManager
 				}
 			}
 		}
+		
+		return $this->response;
+	}
+	
+	public function showListingsForCategoryorSubCategory()
+	{
+		$this->response = $this->listCategorySubCategory();
+		
+		$this->response[ 'listing' ][ 'listing_id' ] = 123;
 		
 		return $this->response;
 	}
