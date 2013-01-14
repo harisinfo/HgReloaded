@@ -2,12 +2,17 @@
 global $loadPlugins, $loadModules, $db;
 
 // Session Encryption keyhash
-define('KEYHASH' , 'v6*pV!L5b!tSF@d~)x2T(Mi_');
+define( 'KEYHASH' , 'v6*pV!L5b!tSF@d~)x2T(Mi_' );
 
 // Application Constants
-define('__APPLICATION_NAME' , 'HarisInfo');
-define('__APPLICATION_SIGNATURE' , 'HI');
-define('__SITE_IDENTIFIER' , 'HI');
+define( '__APPLICATION_NAME' , 'HarisInfo' );
+define( '__APPLICATION_SIGNATURE' , 'HI' );
+define( '__SITE_IDENTIFIER' , 'HI' );
+
+define( '__SMARTY_TEMPLATES' , "" );
+define( '__SMARTY_TEMPLATES_C' , "" );
+define( '__SMARTY_TEMPLATES_CACHE' , "" );
+define( '__SMARTY_TEMPLATES_CONFIG' , "" );
 
 $db[ 'host' ] = 'localhost';
 $db[ 'user' ] = 'root';

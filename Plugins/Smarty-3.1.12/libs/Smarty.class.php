@@ -616,11 +616,32 @@ class Smarty extends Smarty_Internal_TemplateBase {
         }
         $this->start_time = microtime(true);
         // set default dirs
-        $this->setTemplateDir('.' . DS . 'templates' . DS)
-            ->setCompileDir('.' . DS . 'templates_c' . DS)
+        
+        if( is_defined( __SMARTY_TEMPLATES ) === TRUE )
+			$s_templates = __SMARTY_TEMPLATES;
+		else
+			$s_templates = 'templates';
+			
+		if( is_defined( __SMARTY_TEMPLATES_C ) === TRUE )
+			$s_templates_c = __SMARTY_TEMPLATES_C;
+		else
+			$s_templates_c = 'templates_c';
+			
+		if( is_defined( __SMARTY_TEMPLATES_CACHE ) === TRUE )
+			$s_cache = __SMARTY_TEMPLATES_CACHE;
+		else
+			$s_cache = 'cache';
+			
+		if( is_defined( __SMARTY_TEMPLATES_CONFIG ) === TRUE )
+			$s_config = __SMARTY_TEMPLATES_CONFIG;
+		else
+			$s_config = 'cache';
+        
+        $this->setTemplateDir('.' . DS . $s_templates . DS)
+            ->setCompileDir('.' . DS . $s_templates_c . DS)
             ->setPluginsDir(SMARTY_PLUGINS_DIR)
-            ->setCacheDir('.' . DS . 'cache' . DS)
-            ->setConfigDir('.' . DS . 'configs' . DS);
+            ->setCacheDir('.' . DS . $s_cache . DS)
+            ->setConfigDir('.' . DS . $s_config . DS);
 
         $this->debug_tpl = 'file:' . dirname(__FILE__) . '/debug.tpl';
         if (isset($_SERVER['SCRIPT_NAME'])) {

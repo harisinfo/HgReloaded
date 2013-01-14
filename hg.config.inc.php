@@ -12,6 +12,7 @@ define('__MODULE_DIR', 'Modules');
 // Load Plugins 
 define('__PLUGIN_DIR', 'Plugins');
 define('__SIMPLETEST_ENTRY_POINT', 'SimpleTest');
+define( '__SMARTY_TEMPLATE_LIB' , "Smarty-3.1.12/libs/Smarty.class.php" );
 
 // Load Functions
 
