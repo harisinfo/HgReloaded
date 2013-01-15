@@ -92,7 +92,7 @@ class PageManager
 			}
 			else
 			{
-				$this->response[ $this->module ][ 'status' ] = 301;
+				$this->response[ $this->module ][ 'status' ] = 404;
 			}
 			
 		}

@@ -617,25 +617,25 @@ class Smarty extends Smarty_Internal_TemplateBase {
         $this->start_time = microtime(true);
         // set default dirs
         
-        if( is_defined( __SMARTY_TEMPLATES ) === TRUE )
+        if( defined( __SMARTY_TEMPLATES ) === TRUE )
 			$s_templates = __SMARTY_TEMPLATES;
 		else
 			$s_templates = 'templates';
 			
-		if( is_defined( __SMARTY_TEMPLATES_C ) === TRUE )
+		if( defined( __SMARTY_TEMPLATES_C ) === TRUE )
 			$s_templates_c = __SMARTY_TEMPLATES_C;
 		else
 			$s_templates_c = 'templates_c';
 			
-		if( is_defined( __SMARTY_TEMPLATES_CACHE ) === TRUE )
+		if( defined( __SMARTY_TEMPLATES_CACHE ) === TRUE )
 			$s_cache = __SMARTY_TEMPLATES_CACHE;
 		else
 			$s_cache = 'cache';
 			
-		if( is_defined( __SMARTY_TEMPLATES_CONFIG ) === TRUE )
+		if( defined( __SMARTY_TEMPLATES_CONFIG ) === TRUE )
 			$s_config = __SMARTY_TEMPLATES_CONFIG;
 		else
-			$s_config = 'cache';
+			$s_config = 'config';
         
         $this->setTemplateDir('.' . DS . $s_templates . DS)
             ->setCompileDir('.' . DS . $s_templates_c . DS)
@@ -847,6 +847,7 @@ class Smarty extends Smarty_Internal_TemplateBase {
         }
 
         $this->joined_template_dir = join(DIRECTORY_SEPARATOR, $this->template_dir);
+        
         return $this;
     }
 

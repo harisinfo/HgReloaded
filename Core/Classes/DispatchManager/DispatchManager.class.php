@@ -95,8 +95,6 @@ class DispatchManager extends RequestManager
 					{
 						$this->injectObj = new $loadModules[ 'dependency' ][ $module ]( $db[ 'host' ], $db[ 'user' ], $db[ 'password' ], $db[ 'database' ] );
 						
-							var_dump( $db );
-							
 							if( intval( mysqli_connect_errno() ) == 1 )
 							{
     							printf( "Connect failed: %s\n", mysqli_connect_error() );

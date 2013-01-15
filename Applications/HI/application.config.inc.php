@@ -9,10 +9,10 @@ define( '__APPLICATION_NAME' , 'HarisInfo' );
 define( '__APPLICATION_SIGNATURE' , 'HI' );
 define( '__SITE_IDENTIFIER' , 'HI' );
 
-define( '__SMARTY_TEMPLATES' , "" );
-define( '__SMARTY_TEMPLATES_C' , "" );
-define( '__SMARTY_TEMPLATES_CACHE' , "" );
-define( '__SMARTY_TEMPLATES_CONFIG' , "" );
+define( '__SMARTY_TEMPLATES' , "C:\wamp\www\Hg_html_V_1\\Themes\\HI\\templates" );
+define( '__SMARTY_TEMPLATES_C' , "C:\\wamp\\www\\Hg_Reloaded_V_1\\Cache\\HI\\templates_c" );
+define( '__SMARTY_TEMPLATES_CACHE' , "C:\\wamp\\www\\Hg_Reloaded_V_1\\Cache\\HI\\cache" );
+define( '__SMARTY_TEMPLATES_CONFIG' , "C:\\wamp\\www\\Hg_Reloaded_V_1\\Cache\\HI\\config" );
 
 $db[ 'host' ] = 'localhost';
 $db[ 'user' ] = 'root';
@@ -23,4 +23,5 @@ $loadModules[ 'module' ][ 'page' ] = 'PageManager';
 $loadModules[ 'name' ][ 'page' ] = 'PageManager.class.php';
 $loadModules[ 'manager' ][ 'page' ] = 'PageManager';
 $loadModules[ 'dependency' ][ 'page' ] = 'mysqli';
+
 //$loadModules[ 'attach' ][ 'page' ][ 0 ] = 'category'; 
