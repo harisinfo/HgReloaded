@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^howtowinpennyauctions\.co.uk [nc]
+RewriteRule (.*) http://www.howtowinpennyauctions.co.uk/$1 [R=301,L]
+
+#RewriteRule ^home.html$ /index.html [R=301,L]
+RewriteRule ^penny-auction-offer-codes.html$ /penny-auction-reviews.html [R=301,L]
+RewriteRule ^about-my-penny-auction-experience.html$ /win-penny-auctions.html [R=301,L]
+
+RewriteRule ^(.*).html$ /index.php?page_keyword=$1 [L,NC,QSA]
+
+#RewriteRule ^contact-information.html$ contact-information.php?page=$1.html&template=static [L,NC,QSA]
+
+#RewriteRule ^win-penny-auctions.html$ index.html [L,NC,QSA]
+
+
+order allow,deny
+deny from 91.214.44
+deny from 188.27.230
+deny from 89.121.237
+allow from all 

@@ -76,30 +76,21 @@
 <meta http-equiv="Expires" content="Fri, Jan 01 1900 00:00:00 GMT">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="Lang" content="en">
-<meta name="author" content="ian.davis@howtowinpennyauctions.co.uk">
+<meta name="author" content="ian.davis@winpennyauctions.co.uk">
 <meta name="description" content="<?php echo $meta_description[ $page_keyword ]; ?>">
 <meta name="keywords" content="<?php echo $meta_keywords[ $page_keyword ]; ?>">
 <meta name="creation-date" content="01/12/2012">
 <meta name="revisit-after" content="7 days">
 <title><?php echo $meta_title[ $page_keyword ]; ?></title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<div id="content">
+
 <?php 
 include_once( 'topnav.php' ); 
-?>
-<div style="clear:both;"></div>
-<?php
 include_once( "templates/{$pages[ $page_keyword ]}" ); 
 ?>
-
-<p>
-&copy; How to win Penny Auctions 2012 - <?php echo date("Y", time() );?>
-</p>
-</div>
 
 <script type="text/javascript">
 

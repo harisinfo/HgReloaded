@@ -1,0 +1,82 @@
+/* CSS Document */
+
+body{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	height:100%;
+	color: #676767;
+	background-color:#c2d8b4;
+	font-size: 14px;
+	display: block;
+	text-align: center;
+}
+
+h1{
+	color:#000000;
+	font-size:18px;
+	font-weight:bold;
+}
+
+h2{
+	color:#000000;
+	font-size:16px;
+}
+
+h3{
+	color:#000000;
+	font-size:14px;
+}
+
+h4{
+	color:#000000;
+	font-size:12px;
+}
+
+h5{
+	color: #FF0000;
+	font-size:12px;
+}
+
+h6{
+	color:#000000;
+	font-size:12px;
+}
+
+p{
+	display: block;
+	padding: 1px;	
+	text-align: left;
+}
+
+#content {
+	margin: 0 auto;
+	padding: 5px;
+	width:950px;
+	text-align:left;
+	background-color:#FFF;
+}
+
+/*ul {
+	list-style-type: none;
+	background-color: #c2d8b4;
+	height: 80px;
+	width: 920px;
+	margin: auto;
+	font-size:11px;
+}
+
+li {
+	float: left;
+}
+
+ul a {
+	padding-right: 5px;
+	padding-left: 5px;
+	display: block;
+	line-height: 80px;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+ul a:hover {
+	color: #FFF;
+}*/
