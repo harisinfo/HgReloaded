@@ -91,14 +91,31 @@
 <?php 
 include_once( 'topnav.php' ); 
 ?>
+<div id="topbanner" style="float: right; margin-top: -153px;">
+<a href="http://click.linksynergy.com/fs-bin/click?id=U0BEgoGrFzE&offerid=260860.10000189&type=4&subid=0&LSNSUBSITE=subsite"><IMG alt="Holiday Auction Shopping at Beezid.com" border="0" src="http://www.beezid.com/img/aff/banners/animated_wpfp_468x60_3.gif"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=U0BEgoGrFzE&bids=260860.10000189&type=4&subid=0">
+</div>
 <div style="clear:both;"></div>
+
+<div id="rightbanner" style="float: right; margin: 4px; margin-top: 85px;">
+<a href="http://click.linksynergy.com/fs-bin/click?id=U0BEgoGrFzE&offerid=260860.10000144&type=4&subid=0&LSNSUBSITE=subsite"><IMG alt="Get up to 98% OFF everything at Beezid penny auction" border="0" src="http://www.beezid.com/img/aff/banners/up-to-98-percent-off-300x250.gif"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=U0BEgoGrFzE&bids=260860.10000144&type=4&subid=0">
+</div>
+
 <?php
 include_once( "templates/{$pages[ $page_keyword ]}" ); 
 ?>
-
 <p>
 &copy; How to win Penny Auctions 2012 - <?php echo date("Y", time() );?>
 </p>
+</div>
+
+
+
+<div id="skyscrapper_left" style="position:absolute; top: 7px; right: 45px; height: 500px; width: auto;">
+<a href="http://click.linksynergy.com/fs-bin/click?id=U0BEgoGrFzE&offerid=260860.10000143&type=4&subid=0&LSNSUBSITE=subsite"><IMG alt="Holiday Penny Auction Shopping Deals on Beezid.com" border="0" src="http://www.beezid.com/img/aff/banners/wpfp_120x600.jpg"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=U0BEgoGrFzE&bids=260860.10000143&type=4&subid=0">
+</div>
+
+<div id="skyscrapper" style="position:absolute; top: 7px; left: 45px; height: 500px; width: auto;">
+<a href="http://click.linksynergy.com/fs-bin/click?id=U0BEgoGrFzE&offerid=260860.10000098&type=4&subid=0&LSNSUBSITE=subsite"><IMG alt="Beezid" border="0" src="http://www.beezid.com/img/aff/banners/120x600_v7.jpg"></a><IMG border="0" width="1" height="1" src="http://ad.linksynergy.com/fs-bin/show?id=U0BEgoGrFzE&bids=260860.10000098&type=4&subid=0">
 </div>
 
 <script type="text/javascript">
