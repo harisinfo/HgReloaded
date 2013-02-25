@@ -1,0 +1,10 @@
+######## TEST RELEASE ########
+0-59 * * * * cd /turbo/dev/4.0/test/src/test_release/cron/; /usr/bin/php kakucron.php5 --config test_release >> /data/logs/cron/test_release/kakucron-log
+0-59 * * * * cd /turbo/dev/4.0/test/src/test_release/cron/; /usr/bin/php intl_push.php5 --config test_release >> /data/logs/cron/test_release/intl-push-log
+3,8,13,18,23,28,33,38,43,48,53,58 * * * * cd /turbo/dev/4.0/test/src/test_release/cron/; /usr/bin/php secondary.php5 madbid /turbo/dev/4.0/test/intl/test_release/site_cfg.php5 >> /data/logs/cron/test_relea
+se/secondary-log
+0-59/10 * * * * cd /turbo/dev/4.0/test/src/test_release/cron/; /usr/bin/php cache-rebuild.php5 --config test_release --json --listen --verbose &> /data/logs/cron/test_release/cache-rebuild-json-log
+* * * * * cd /turbo/dev/4.0/live/src/live/sql/; /usr/bin/php rapid_recharge.php5 --config test_release madbid /turbo/dev/4.0/test/intl/test_release/site_cfg.php5 >> /data/logs/cron/test_release/rapid_recha
+rge.log
+* * * * * cd /turbo/dev/4.0/live/src/live/cron/; /usr/bin/php cronMassiveAuctionCreation.php5 --config test_release --group 23098 --group 23104 --group 23089 --group 23086 --group 23083 --group 23071 --gro
+up 23053 --group 23047 --group 23044 --group 23038 --group 23032 --group 23026 --group 19156 --group 19228 --group 19150 --group 19153 --group 21949 --group 19159 --group 23014 --ignore-stock

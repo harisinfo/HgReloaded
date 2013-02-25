@@ -6,6 +6,4 @@
 	<li><a href="/penny-auction-offer-codes.html"> Offer Codes</a></li>
 	<li><a href="/penny-auction-bidding-strategies.html">Bidding Strategies</a></li>
 	<!--<li><a href="/penny-auction-top-10-tips.html">Top 10 Bidding Strategies</a></li>-->
-	<li><a href="/about-my-penny-auction-experience.html">About me</a></li>
-	<li><a href="/contact.html">Contact</a></li>
 </ul>
