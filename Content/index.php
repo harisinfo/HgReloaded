@@ -24,16 +24,13 @@
 	
 	// meta
 	
-	$meta_description[ 'win-penny-auctions' ] = 'An independent unbiased resource dedicated to reviewing penny auctions available in the 
-													UK / European Union and a dedicated platform providing tips, strategies and best promotional 
-													offers available on various pay to bid online auction sites';
+	$meta_description[ 'win-penny-auctions' ] = 'An independent unbiased resource dedicated to reviewing penny auctions available in the UK / European Union and a dedicated platform providing tips, strategies and best promotional offers available on various pay to bid online auction sites';
 	$meta_keywords[ 'win-penny-auctions' ] = 'Penny Auctions review, MadBid Scam, Beezid Review, Beezid Scam, How to win penny auctions, penny auction tips';
-	$meta_title[ 'win-penny-auctions' ] = 'Win Penny Auctions - Home';
+	$meta_title[ 'win-penny-auctions' ] = 'How to Win Penny Auctions';
 	
 	
 	$meta_description[ 'penny-auction-explained' ] = 'Penny Auctions Explained';
-	$meta_keywords[ 'penny-auction-explained' ] = 'Penny Auctions Explained, Penny Auctions review, MadBid Scam, Beezid Review, Beezid Scam, 
-													How to win penny auctions, penny auction tips';
+	$meta_keywords[ 'penny-auction-explained' ] = 'Penny Auctions Explained, Penny Auctions review, MadBid Scam, Beezid Review, Beezid Scam, How to win penny auctions, penny auction tips';
 	$meta_title[ 'penny-auction-explained' ] = 'How penny auctions work';
 	
 	
@@ -88,7 +85,6 @@
 </head>
 <body>
 <div id="content">
-
 <?php 
 include_once( 'topnav.php' ); 
 ?>
