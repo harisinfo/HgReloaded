@@ -1,10 +1,13 @@
 <?php
+
 /**
 * @name: ParseJsonManager
 * @author: Hari Ramamurthy <info@harisinfo.co.uk>
 * @since: 2012/10/12
 */
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 
 final class ParseJsonManager
@@ -30,7 +33,9 @@ final class ParseJsonManager
 	
 	public static final function init()
 	{
+		echo "here";
 		$a = json_decode( ParseJsonManager::$jsonString, TRUE );
+		var_dump( $a );
 		$auctions = $a[ 'response' ][ 'items' ];
 		foreach( $auctions as $key => $value )
 		{
