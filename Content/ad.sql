@@ -3,13 +3,18 @@
 -- Server version                :5.1.53-community-log - MySQL Community Server (GPL)
 -- Server OS                     :Win64
 -- HeidiSQL Version              :7.0.0.4247
--- Created                       :2013-02-28 18:12:11
+-- Created                       :2013-03-01 18:00:32
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping database structure for da
+CREATE DATABASE IF NOT EXISTS `da` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `da`;
+
 
 -- Dumping structure for table da.auction_data
 DROP TABLE IF EXISTS `auction_data`;
@@ -27,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `auction_data` (
   KEY `date_bid` (`date_bid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- Dumping data for table da.auction_data: 61 rows
+-- Dumping data for table da.auction_data: 62 rows
 DELETE FROM `auction_data`;
 /*!40000 ALTER TABLE `auction_data` DISABLE KEYS */;
 INSERT INTO `auction_data` (`auction_id`, `product_id`, `title`, `credit_cost`, `highest_bid`, `date_opens`, `date_bid`) VALUES
@@ -92,7 +97,14 @@ INSERT INTO `auction_data` (`auction_id`, `product_id`, `title`, `credit_cost`, 
 	(2766421, 22762, 'New iPod touch 32GB Silver', 4, 28.93, '2013-02-27 15:00:00', '2013-02-27 19:17:41'),
 	(2766415, 23071, '9.7" GoTab Epic V Multipad ', 4, 11.99, '2013-02-27 13:30:00', '2013-02-27 17:03:07'),
 	(2766433, 22681, 'iPhone 5 16GB', 8, 65.94, '2013-02-27 19:00:00', '2013-02-28 13:42:42'),
-	(2766445, 22585, 'Canon EOS 650D + 18-55 Lens', 6, 116.48, '2013-02-27 21:00:00', '2013-02-28 18:04:26');
+	(2766445, 22585, 'Canon EOS 650D + 18-55 Lens', 6, 116.48, '2013-02-27 21:00:00', '2013-02-28 18:04:26'),
+	(2776234, 22654, 'Xbox 360 4GB with Kinect', 4, 0.13, '2013-03-01 16:00:00', '2013-03-01 16:04:15'),
+	(2776222, 22453, 'Samsung Galaxy S III', 6, 3.28, '2013-03-01 13:00:00', '2013-03-01 16:03:13'),
+	(2766523, 22681, 'iPhone 5 16GB', 8, 55.58, '2013-02-28 20:00:00', '2013-03-01 14:48:21'),
+	(2766529, 23278, 'Lenovo Yoga Convertible Laptop', 6, 40.71, '2013-02-28 18:00:00', '2013-03-01 13:22:39'),
+	(2766517, 23020, 'iPad Mini 16GB', 4, 111.08, '2013-02-28 14:00:00', '2013-02-28 21:55:47'),
+	(2766520, 23056, 'Sharp 22" LED TV with DVD', 6, 45.44, '2013-02-28 15:00:00', '2013-02-28 21:50:54'),
+	(2766514, 22762, 'New iPod touch 32GB Silver', 4, 56.93, '2013-02-28 13:30:00', '2013-02-28 19:09:52');
 /*!40000 ALTER TABLE `auction_data` ENABLE KEYS */;
 
 
@@ -182,7 +194,22 @@ INSERT INTO `auction_data_future` (`auction_id`, `product_id`, `title`, `credit_
 	(2776225, 21565, 'MagicBox Tower DAB iPod Dock', 4, 0.00, '2013-03-01 13:30:00', '0000-00-00 00:00:00'),
 	(2776228, 22762, 'New iPod touch 32GB Silver', 4, 0.00, '2013-03-01 14:00:00', '0000-00-00 00:00:00'),
 	(2776231, 23026, 'iPad Mini 64GB', 6, 0.00, '2013-03-01 15:00:00', '0000-00-00 00:00:00'),
-	(2776234, 22654, 'Xbox 360 4GB with Kinect', 4, 0.00, '2013-03-01 16:00:00', '0000-00-00 00:00:00');
+	(2776234, 22654, 'Xbox 360 4GB with Kinect', 4, 0.00, '2013-03-01 16:00:00', '0000-00-00 00:00:00'),
+	(2776237, 22645, 'Sharp 32" LED TV LC32LE40E', 6, 0.00, '2013-03-01 18:00:00', '0000-00-00 00:00:00'),
+	(2776240, 22240, 'White Carousel Mini Umbrella', 4, 0.00, '2013-03-01 18:30:00', '0000-00-00 00:00:00'),
+	(2776243, 22681, 'iPhone 5 16GB', 8, 0.00, '2013-03-01 19:00:00', '0000-00-00 00:00:00'),
+	(2776246, 19753, 'Vax Libretto Hand Vacuum', 3, 0.00, '2013-03-01 19:30:00', '0000-00-00 00:00:00'),
+	(2776249, 22768, 'Acer Aspire One Blue Netbook', 6, 0.00, '2013-03-01 20:00:00', '0000-00-00 00:00:00'),
+	(2776252, 21739, 'LTD 030703 Unisex Watch', 4, 0.00, '2013-03-01 20:30:00', '0000-00-00 00:00:00'),
+	(2776255, 22585, 'Canon EOS 650D + 18-55 Lens', 6, 0.00, '2013-03-01 21:00:00', '0000-00-00 00:00:00'),
+	(2776258, 20461, 'Remington Titanium 360', 4, 0.00, '2013-03-01 21:30:00', '0000-00-00 00:00:00'),
+	(2776261, 22933, 'Kindle Fire', 4, 0.00, '2013-03-01 22:00:00', '0000-00-00 00:00:00'),
+	(2776267, 21445, 'Olive Voodoo Knife Block', 4, 0.00, '2013-03-01 23:00:00', '0000-00-00 00:00:00'),
+	(2776414, 22420, 'Altec Lansing iPod/iPhone Dock', 4, 0.00, '2013-03-02 12:00:00', '0000-00-00 00:00:00'),
+	(2776417, 18649, 'GBP 200 Cash + 1950 Credits', 7, 0.00, '2013-03-02 13:00:00', '0000-00-00 00:00:00'),
+	(2776420, 21199, 'MD20 Heart Mens Wallet (Sand)', 4, 0.00, '2013-03-02 13:30:00', '0000-00-00 00:00:00'),
+	(2776423, 23020, 'iPad Mini 16GB', 4, 0.00, '2013-03-02 14:00:00', '0000-00-00 00:00:00'),
+	(2776426, 21742, 'LTD 140103 Pink Watch', 4, 0.00, '2013-03-02 14:30:00', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `auction_data_future` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
