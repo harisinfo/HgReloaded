@@ -6,35 +6,30 @@
 * @since: 2012/10/12
 */
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
 
-final class ParseJsonManager
+
+class ParseJsonManager
 {   	
-	protected static $jsonString = 'localhost';
-	protected static $auctions = array();
-	protected static $request;
 	
-	public function __construct( $request )
+	function ParseJsonManager( $request )
 	{
-		ParseJsonManager::$request = $request;
+		$this->request = $request;
 		
 		if( $request == 'recent' )
 		{			
-			ParseJsonManager::$jsonString = file_get_contents( 'http://uk.madbid.com/json/site/load/closed/recently/' );
+			$this->jsonString = file_get_contents( 'http://www.harisinfo.co.uk' ); //http://uk.madbid.com/json/site/load/closed/recently/
 		}
 		else
 		{			
-			ParseJsonManager::$jsonString = file_get_contents( 'http://uk.madbid.com/json/site/load/future/' );
+			$this->jsonString = file_get_contents( 'http://uk.madbid.com/json/site/load/future/' );
 		}
 	}
 	
 	
-	public static final function init()
+	function init()
 	{
-		echo "here";
-		$a = json_decode( ParseJsonManager::$jsonString, TRUE );
+		$a = json_decode( $this->jsonString, TRUE );
 		var_dump( $a );
 		$auctions = $a[ 'response' ][ 'items' ];
 		foreach( $auctions as $key => $value )
@@ -48,7 +43,7 @@ final class ParseJsonManager
 			$b[ $auctions[ $key ][ 'auction_id' ] ][ 'date_bid' ] = $auctions[ $key ][ 'auction_data' ][ 'last_bid' ][ 'date_bid' ];
 		}
 				
-		if( ParseJsonManager::$request == 'recent' )
+		if( $this->request == 'recent' )
 		{
 			$table = 'auction_data';
 		}
@@ -67,3 +62,5 @@ final class ParseJsonManager
 
 $p = new ParseJsonManager( $_GET[ 'rtype' ] );
 $p->init();
+
+?>
